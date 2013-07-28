@@ -3,10 +3,25 @@
 </head>
 
 <body>
-{{> counter }}
-<button id="inc">count++</button>
+  <h1>Numberwang!</h1>
+  <div id="c0">
+    <h2>Contestant 0</h2>
+    {{> c0counter }}
+  </div>
+  <div id="c1">
+    <h2>Contestant 1</h2>
+    {{> c1counter }}
+  </div>
+  {{> result }}
 </body>
 
-<template name="counter">
-  {{count}}
+<template name="c0counter">{{count}}</template>
+<template name="c1counter">{{count}}</template>
+
+<template name="result">
+  <div id="result">
+    <h1>Last Result!</h1>
+    Contestant {{result.winner}} WIN!<br/>
+    {{result.score}}
+  </div>
 </template>
